@@ -16,7 +16,7 @@ node('maven') {
 
     stage ('Git Clone') {
         sh "git config --global http.sslVerify false"
-        sh "git clone {repoUrl} source "
+        sh "git clone https://${repoUrl} source "
     }
     
     stage ('App Build') {
