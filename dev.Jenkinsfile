@@ -16,9 +16,7 @@ node('maven') {
 
     stage ('Git Clone') {
         sh "git config --global http.sslVerify false"
-        withCredentials([usernamePassword(credentialsId: 'customs-gitlab-credential', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh "git clone https://\${USERNAME}:\${PASSWORD}@${repoUrl} source "
-        }
+        sh "git clone {repoUrl} source "
     }
     
     stage ('App Build') {
