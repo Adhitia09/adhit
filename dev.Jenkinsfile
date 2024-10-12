@@ -25,7 +25,6 @@ node('maven') {
         dir("source") {
             sh "git fetch"
             sh "git switch ${branchName}" 
-            sh "sleep 60"
             }
 
         }
